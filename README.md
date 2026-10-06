@@ -78,14 +78,10 @@
 GitExample/
 ├── docs/
 │   └── diagrams/
-│           
-│            
-│            
-│           
-├── src/
-│   └── main.py
-├── .gitignore
-└── README.md                  
+│ 
+├── sск/
+│   └──script.py
+└── README.md        
 
 ---
 
