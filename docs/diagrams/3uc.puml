@@ -4,32 +4,33 @@ left to right direction
 actor "Администратор" as Admin
 actor "Арендатор" as Tenant
 
-usecase "Добавить помещение" as UC_AddRoom
-usecase "Оформить договор аренды" as UC_Contract
-usecase "Проверить доступность помещения" as UC_CheckAvail
-usecase "Проверить состояние помещения" as UC_CheckState
-usecase "Выдать помещение" as UC_Issue
-usecase "Вернуть помещение" as UC_Return
-usecase "Закрыть договор" as UC_Close
-usecase "Уведомить техслужбу" as UC_Notify
-usecase "Просмотреть отчёты" as UC_Reports
-usecase "Просмотреть свои договоры" as UC_MyContracts
+usecase "Добавить помещение" as UC1
+usecase "Оформить договор аренды" as UC2
+usecase "Выдать помещение" as UC3
+usecase "Закрыть договор" as UC4
+usecase "Уведомить техслужбу" as UC5
+usecase "Просмотреть отчёты" as UC6
+usecase "Просмотреть свои договоры" as UC7
+usecase "Вернуть помещение" as UC8
 
-Admin --> UC_AddRoom
-Admin --> UC_Contract
-Admin --> UC_CheckState
-Admin --> UC_Issue
-Admin --> UC_Close
-Admin --> UC_Notify
-Admin --> UC_Reports
+' Общие варианты использования (и для Администратора, и для Арендатора)
+usecase "Проверить доступность помещения" as UC_Common1
+usecase "Проверить состояние помещения" as UC_Common2
 
-Tenant --> UC_CheckAvail
-Tenant --> UC_CheckState
-Tenant --> UC_Return
-Tenant --> UC_MyContracts
+' Связи Администратора
+Admin --> UC1
+Admin --> UC2
+Admin --> UC3
+Admin --> UC4
+Admin --> UC5
+Admin --> UC6
+Admin --> UC_Common1
+Admin --> UC_Common2
 
-UC_Contract ..> UC_CheckAvail : <<include>>
-UC_Issue ..> UC_CheckState : <<include>>
-UC_Return ..> UC_CheckState : <<include>>
+' Связи Арендатора
+Tenant --> UC7
+Tenant --> UC8
+Tenant --> UC_Common1
+Tenant --> UC_Common2
 
 @enduml
