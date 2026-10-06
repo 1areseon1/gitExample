@@ -1,0 +1,36 @@
+@startuml
+left to right direction
+
+actor "Администратор" as Admin
+actor "Арендатор" as Tenant
+
+usecase "Добавить помещение" as UC1
+usecase "Оформить договор аренды" as UC2
+usecase "Выдать помещение" as UC3
+usecase "Закрыть договор" as UC4
+usecase "Уведомить техслужбу" as UC5
+usecase "Просмотреть отчёты" as UC6
+usecase "Просмотреть свои договоры" as UC7
+usecase "Вернуть помещение" as UC8
+
+' Общие варианты использования (и для Администратора, и для Арендатора)
+usecase "Проверить доступность помещения" as UC_Common1
+usecase "Проверить состояние помещения" as UC_Common2
+
+' Связи Администратора
+Admin --> UC1
+Admin --> UC2
+Admin --> UC3
+Admin --> UC4
+Admin --> UC5
+Admin --> UC6
+Admin --> UC_Common1
+Admin --> UC_Common2
+
+' Связи Арендатора
+Tenant --> UC7
+Tenant --> UC8
+Tenant --> UC_Common1
+Tenant --> UC_Common2
+
+@enduml
