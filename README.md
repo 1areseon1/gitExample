@@ -79,10 +79,12 @@
 GitExample/
 ├── docs/
 │   └── diagrams/
-│       ├── 1.puml
-│       ├── бс1.pdf
-│       ├── 2.puml
-│       └── бс2.pdf
+│       ├── use_case.puml
+│       ├── use_case.pdf
+│       ├── diagram_1.puml
+│       ├── diagram_1.pdf
+│       ├── diagram_2.puml
+│       └── diagram_2.pdf
 ├── src/
 │   └── script.py
 └── README.md
