@@ -1,0 +1,51 @@
+@startuml
+
+entity "Помещение" as Room {
+  room_id
+  --
+  номер
+  тип
+  площадь
+  статус
+}
+
+entity "Арендатор" as Tenant {
+  tenant_id
+  --
+  фио
+  телефон
+}
+
+entity "Сотрудник" as Employee {
+  employee_id
+  --
+  фио
+  должность
+}
+
+entity "Договор" as Contract {
+  contract_id
+  --
+  room_id
+  tenant_id
+  employee_id
+  дата_начала
+  дата_конца
+  стоимость
+}
+
+entity "Уведомление" as Notification {
+  notification_id
+  --
+  room_id
+  employee_id
+  описание
+}
+
+Room ||--o{ Contract : "1:N"
+Tenant ||--o{ Contract : "1:N"
+Employee ||--o{ Contract : "1:N"
+Room ||--o{ Notification : "1:N"
+Employee ||--o{ Notification : "1:N"
+
+@enduml

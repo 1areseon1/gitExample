@@ -1,0 +1,26 @@
+#  Python 
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Виртуальные окружения
+venv/
+.venv/
+env/
+
+# Базы данных SQLite 
+*.db
+*.sqlite
+*.sqlite3
+rental.db
+
+# PyCharm / IntelliJ IDEA
+.idea/
+*.iml
+
+# Операционная система
+Thumbs.db
+.DS_Store
+
+# Логи
+*.log
