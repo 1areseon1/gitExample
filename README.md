@@ -88,11 +88,13 @@ GitExample/
 │       ├── er_diagram.png
 │       └── uc3.pdf
 ├── src/
+│   ├── run_sql.py
+│   ├── schema.sql
 │   └── script.py
 ├── .gitignore
+├── rental.db
 └── README.md
-```      
-
+```
 ### 🗄️ ER-диаграмма базы данных
 
 ![ER-диаграмма](docs/diagrams/er_diagram.png)
