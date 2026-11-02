@@ -7,3 +7,5 @@ class Tenant:
     first_name: str
     middle_name: str | None
     phone: str
+    login: str
+    password: str

@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS Employee;
 DROP TABLE IF EXISTS Tenant;
 DROP TABLE IF EXISTS Room;
 
+
 CREATE TABLE Room (
     room_id INTEGER PRIMARY KEY AUTOINCREMENT,
     number TEXT NOT NULL,
@@ -18,7 +19,9 @@ CREATE TABLE Tenant (
     last_name TEXT NOT NULL,
     first_name TEXT NOT NULL,
     middle_name TEXT,
-    phone TEXT NOT NULL
+    phone TEXT NOT NULL,
+    login TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
 );
 
 CREATE TABLE Employee (
@@ -26,7 +29,9 @@ CREATE TABLE Employee (
     last_name TEXT NOT NULL,
     first_name TEXT NOT NULL,
     middle_name TEXT,
-    position TEXT NOT NULL
+    position TEXT NOT NULL,
+    login TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
 );
 
 CREATE TABLE Contract (
@@ -53,25 +58,25 @@ CREATE TABLE Notification (
 
 
 
--- Помещения (Room)
+-- Помещения
 INSERT INTO Room (number, type, area, status) VALUES 
 ('101', 'Офис', 45.5, 'свободно'),
 ('102', 'Склад', 120.0, 'занято'),
 ('201', 'Магазин', 80.0, 'свободно');
 
--- Арендаторы (Tenant)
-INSERT INTO Tenant (last_name, first_name, middle_name, phone) VALUES 
-('Иванов', 'Иван', 'Иванович', '+7-900-111-22-33'),
-('Петрова', 'Анна', 'Сергеевна', '+7-900-444-55-66');
+-- Арендаторы (логин: 2, пароль: 2)
+INSERT INTO Tenant (last_name, first_name, middle_name, phone, login, password) VALUES 
+('Иванов', 'Иван', 'Иванович', '+7-900-111-22-33', '2', '2'),
+('Петрова', 'Анна', 'Сергеевна', '+7-900-444-55-66', 'petrova', '123');
 
--- Сотрудники (Employee)
-INSERT INTO Employee (last_name, first_name, middle_name, position) VALUES 
-('Сидоров', 'Петр', 'Алексеевич', 'Администратор');
+-- Сотрудники (логин: 1, пароль: 1)
+INSERT INTO Employee (last_name, first_name, middle_name, position, login, password) VALUES 
+('Сидоров', 'Петр', 'Алексеевич', 'Администратор', '1', '1');
 
--- Договоры (Contract)
+-- Договоры
 INSERT INTO Contract (room_id, tenant_id, employee_id, start_date, end_date, cost) VALUES 
 (2, 1, 1, '2026-10-01', '2026-12-31', 50000.00);
 
--- Уведомления (Notification)
+-- Уведомления
 INSERT INTO Notification (room_id, employee_id, description) VALUES 
 (2, 1, 'Протечка крыши');

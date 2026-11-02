@@ -77,6 +77,9 @@
 
 ```
 GitExample/
+├── database/
+│   ├── __init__.py
+│   └── db.py
 ├── docs/
 │   └── diagrams/
 │       ├── 1.puml
@@ -87,7 +90,27 @@ GitExample/
 │       ├── er_diagram.puml
 │       ├── er_diagram.png
 │       └── uc3.pdf
+├── models/
+│   ├── __init__.py
+│   ├── room.py
+│   ├── tenant.py
+│   ├── employee.py
+│   ├── contract.py
+│   └── notification.py
+├── repositories/
+│   ├── __init__.py
+│   ├── room_repo.py
+│   ├── tenant_repo.py
+│   ├── employee_repo.py
+│   ├── contract_repo.py
+│   └── notification_repo.py
+├── services/
+│   ├── __init__.py
+│   ├── auth_service.py
+│   ├── tenant_service.py
+│   └── contract_service.py
 ├── src/
+│   ├── main_menu.py
 │   ├── run_sql.py
 │   ├── schema.sql
 │   └── script.py
