@@ -12,14 +12,18 @@ entity "Помещение" as Room {
 entity "Арендатор" as Tenant {
   tenant_id
   --
-  фио
+  фамилия
+  имя
+  отчество
   телефон
 }
 
 entity "Сотрудник" as Employee {
   employee_id
   --
-  фио
+  фамилия
+  имя
+  отчество
   должность
 }
 
